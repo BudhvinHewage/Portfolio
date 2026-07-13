@@ -12,14 +12,23 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
-      - run: npm ci          # install deps
-      - run: npm run lint          # lint
-      - run: npm run build          # build (fast native check, before the container build)
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run build
 
   deploy:
     needs: ci
     runs-on: self-hosted
     steps:
       - uses: actions/checkout@v4
-      - run: docker build -t portfolio:latest .        # docker build, what tag?
-      - run: docker stop portfolio || true && docker rm portfolio || true && docker run -d --name portfolio -p 90:90 portfolio:latest          # bring the container up with the new image
+      
+      - name: Build Docker Image
+        run: docker build -t portfolio:latest .
+        
+      - name: Clean up old container
+        run: |
+          docker stop portfolio || true
+          docker rm portfolio || true
+          
+      - name: Start new container
+        run: docker run -d --name portfolio -p 90:90 portfolio:latest
