@@ -30,4 +30,4 @@ jobs:
           docker rm portfolio || true
           
       - name: Start new container
-        run: docker run -d --name portfolio -p 90:90 portfolio:latest
+        run: docker run -d --name portfolio -p 90:80 portfolio:latest
