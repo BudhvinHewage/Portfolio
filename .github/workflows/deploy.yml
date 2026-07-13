@@ -1,0 +1,25 @@
+name: deploy-portfolio
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  ci:
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: npm ci          # install deps
+      - run: npm run lint          # lint
+      - run: npm run build          # build (fast native check, before the container build)
+
+  deploy:
+    needs: ci
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v4
+      - run: docker build -t portfolio:latest          # docker build, what tag?
+      - run: docker stop portfolio || true && docker rm portfolio || true && docker ru -d --name portfolio -p 90:90 portfolio:latest          # bring the container up with the new image
