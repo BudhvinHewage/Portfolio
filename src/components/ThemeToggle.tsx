@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import { useTheme } from 'next-themes'
-import { siteConfig } from '@/config/content'
+import { globalConfig } from '@/config/global'
 
 export default function ThemeToggle() {
   const { theme, setTheme } = useTheme()
@@ -67,8 +67,8 @@ export default function ThemeToggle() {
         </svg>
       </div>
       <span className="hidden sm:inline-block">
-        <span className={`ml-2 ${theme === 'dark' ? 'hidden' : ''}`}>{siteConfig.theme.dayMode}</span>
-        <span className={`ml-2 ${theme === 'light' ? 'hidden' : ''}`}>{siteConfig.theme.nightMode}</span>
+        <span className={`ml-2 ${theme === 'dark' ? 'hidden' : ''}`}>{globalConfig.theme.dayMode}</span>
+        <span className={`ml-2 ${theme === 'light' ? 'hidden' : ''}`}>{globalConfig.theme.nightMode}</span>
       </span>
     </button>
   )

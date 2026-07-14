@@ -2,13 +2,13 @@ import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from "next/font/google";
 import ThemeProvider from '@/components/ThemeProvider'
-import { siteConfig } from '@/config/content'
+import { globalConfig } from '@/config/global'
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: siteConfig.name,
-  description: siteConfig.description,
+  title: globalConfig.site.name,
+  description: globalConfig.site.description,
 };
 
 export default function RootLayout({

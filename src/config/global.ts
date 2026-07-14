@@ -30,5 +30,9 @@ export const globalConfig = {
       github: "#",
       email: "[EMAIL_ADDRESS]"
     }
+  },
+  theme: {
+    dayMode: "Day mode",
+    nightMode: "Night mode"
   }
 } as const; 
