@@ -99,26 +99,6 @@ export default function HomeContent() {
                 />
               </svg>
             </Link>
-
-            <Link
-              href="/posts"
-              className="group inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-neutral-900 bg-white border border-neutral-300 rounded-lg hover:bg-neutral-50 dark:bg-neutral-900 dark:text-white dark:border-neutral-700 dark:hover:bg-neutral-800 transition-all duration-300 hover:scale-105 cursor-pointer"
-            >
-              {homeConfig.buttons.readPosts}
-              <svg 
-                className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" 
-                fill="none" 
-                stroke="currentColor" 
-                viewBox="0 0 24 24"
-              >
-                <path 
-                  strokeLinecap="round" 
-                  strokeLinejoin="round" 
-                  strokeWidth={2.5} 
-                  d="M13 7l5 5m0 0l-5 5m5-5H6" 
-                />
-              </svg>
-            </Link>
           </div>
         </div>
 
