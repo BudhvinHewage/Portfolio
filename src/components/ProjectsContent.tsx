@@ -106,7 +106,7 @@ export default function ProjectsContent() {
                 {project.tags.map((tag, index) => {
                   const category = techCategories[tag]
                   const categoryColor = categoryColors[category]
-                  return (<span className={`inline-block ${categoryColor} text-xs font-medium mr-2 px-2.5 py-0.5 rounded`}>{tag}</span>)
+                  return (<span key={index} className={`inline-block ${categoryColor} text-xs font-medium mr-2 px-2.5 py-0.5 rounded`}>{tag}</span>)
                 })}
               </span>
             </span>
