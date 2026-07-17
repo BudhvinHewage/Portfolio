@@ -1,66 +1,102 @@
 export const aboutConfig = {
   title: "About Me",
-  description: "This is where you can introduce yourself or your company. Share your story, mission, and values. Explain what makes you unique and why people should be interested in your work. Keep it concise but engaging.",
+  description: "I am a CompE student at Toronto Metropolitan University focusing \
+  on the intersection of software development and hardware design. From academic labs to my personal homelab, \
+  I focus on building efficient, reliable systems across embedded computing, automation and electronics. \
+  I also spend my time volunteering, reading, playing soccer & pickleball, diving into board games & manga\
+  and exploring the outdoors. Ultimately, I love learning, taking pride in what I build, and solving real-world problems as \
+  I take on new challenges.",
   image: "/assets/images/about.jpg",
-  stats: [
-    {
-      value: "5+",
-      label: "Years Experience",
-    },
-    {
-      value: "50+",
-      label: "Projects Completed",
-    },
-    {
-      value: "100%",
-      label: "Client Satisfaction",
-    },
-  ],
   skills: [
     "Next.js",
     "React",
     "TypeScript",
     "Tailwind CSS",
-    "Node.js",
+    "Python",
+    "FastAPI",
     "Docker",
     "Git",
-    "AWS"
+    "AWS (DynamoDB, S3)",
+    "Unreal Engine",
+    "n8n",
+    "VHDL",
+    "PLC / Ladder Logic",
+    "AutoCAD",
+    "Arduino"
   ],
   experience: {
     title: "Experience",
     items: [
       {
-        period: "2022 - Present",
-        role: "Senior Frontend Developer",
-        company: "Tencent Cloud",
-        description: "Leading frontend development for EdgeOne platform and templates."
+        period: "Oct 2025 - Present",
+        role: "Technology & Facilities Assistant",
+        company: "School of Image Arts",
+        location: "Toronto, ON",
+        highlights: [
+          "Provide first-level hardware/software support and perform minor repairs for studio computing equipment",
+          "Maintain daily studio operations, ensuring equipment readiness, safety, and efficient student use",
+          "Manage equipment and facility databases and perform color correction to maintain consistent studio outputs"
+        ]
       },
       {
-        period: "2020 - 2022",
-        role: "Frontend Developer",
-        company: "Tencent Cloud",
-        description: "Developed and maintained multiple web applications and tools."
+        period: "Sept 2023 - Present",
+        role: "Research Assistant",
+        company: "MIMS Labs",
+        location: "Toronto, ON",
+        highlights: [
+          "Collaborate with senior researchers to build, test, and verify interactive system prototypes in Unreal Engine",
+          "Create, debug, and validate 5+ HUD widgets, delivering assignments ahead of schedule",
+          "Coordinate 15+ study participants, ensuring smooth scheduling, consent compliance, and data integrity"
+        ]
       },
       {
-        period: "2018 - 2020",
-        role: "Junior Developer",
-        company: "Tencent Cloud",
-        description: "Worked on various client projects and internal tools."
+        period: "Jan 2022 - Apr 2023",
+        role: "Lab Technician",
+        company: "Centennial College",
+        location: "Toronto, ON",
+        highlights: [
+          "Diagnosed, troubleshot, and repaired hardware and control systems, ensuring safe and reliable operation",
+          "Trained and supervised 150+ students on lab equipment, safety procedures, and best practices",
+          "Maintained and inspected specialized equipment (oscilloscopes, PLC panels), supporting continuous instructional use"
+        ]
       }
     ]
   },
-  connect: {
-    title: "Let's Connect",
-    description: "Feel free to reach out if you want to collaborate or just say hi! You can find us on social media or drop us an email.",
-    links: {
-      twitter: {
-        text: "follow us on twitter",
-        url: "#"
+  education: {
+    title: "Education",
+    items: [
+      {
+        institution: "Toronto Metropolitan University",
+        degree: "BEng in Computer Engineering",
+        period: "Expected Apr 2028",
+        gpa: "cGPA: 3.84/4.3",
+        honors: "Dean's List (Fall 2023, Winter 2024, Fall 2024)"
       },
-      email: {
-        text: "email",
-        url: "mailto:[EMAIL_ADDRESS]"
+      {
+        institution: "Centennial College",
+        degree: "OCAD in Electro-Mechanical Engineering Technology",
+        period: "Apr 2023",
+        gpa: "cGPA: 4.11/4.33",
+        honors: "High Honors Graduate, Skills Ontario – Mechatronics Silver Medalist (2022)"
       }
-    }
+    ]
+  },
+  interests: {
+    title: "Interests",
+    items: [
+      {
+        category: "Volunteering",
+        items: ["Pride Toronto", "Doors Open Toronto", "Scotiabank Waterfront Marathon"]
+      },
+      {
+        category: "Technology & Electronics",
+        items: ["DIY Electronics", "Custom PC Assembly", "3D Printing"]
+        // TODO: decide whether homelab/current projects belong here or get their own line
+      },
+      {
+        category: "Board Games",
+        items: ["Dungeons & Dragons (Dungeon Master)"]
+      }
+    ]
   }
-}; 
+};

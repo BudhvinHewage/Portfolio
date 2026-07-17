@@ -1,8 +1,8 @@
 export const globalConfig = {
   site: {
-    name: "Your Portfolio Name",
-    author: "Your Name",
-    description: "A brief description of your portfolio website",
+    name: "Budhvin's Portfolio",
+    author: "Budhvin Hewage",
+    description: "A portfolio website showcasing my projects, skills, and experience in software development and hardware design.",
     url: "/"
   },
   navigation: {
@@ -24,11 +24,10 @@ export const globalConfig = {
   },
   footer: {
     aria: "Footer Navigation",
-    copyright: "© 2025 Your Name. All rights reserved ",
+    copyright: "© 2026 Budhvin Hewage. All rights reserved ",
     social: {
-      twitter: "#",
-      github: "#",
-      email: "[EMAIL_ADDRESS]"
+      github: "https://github.com/BudhvinHewage",
+      email: "budhvin.hewage@gmail.com"
     }
   },
   theme: {
