@@ -1,11 +1,9 @@
 'use client'
 
-import Link from "next/link";
 import Image from "next/image";
 import {useState} from "react";
 import { Project, projectsConfig } from '@/config/projects';
 import { techCategories, categoryColors } from '@/config/techCategories';
-import React, {useEffect, useRef} from "react";
 import { ProjectModal } from "./ProjectModal";
 
 export default function ProjectsContent() {
@@ -24,7 +22,7 @@ export default function ProjectsContent() {
       <div className="z-50 grid items-stretch w-full grid-cols-1 my-8 gap-7 sm:gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {projectsConfig.items.map((project, index) => (
           <button
-            key={index}
+            key={project.id}
             className="relative flex flex-col items-stretch duration-300 ease-out p-7 sm:p-3 group h-100 rounded-2xl"
             type="button"
             onClick={() => setActiveProject(project)}
