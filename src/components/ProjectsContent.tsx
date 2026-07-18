@@ -1,54 +1,15 @@
+'use client'
+
 import Link from "next/link";
 import Image from "next/image";
-import { projectsConfig } from '@/config/projects';
-
-// temporary declaraction of dictionries to provide labels for tags
-
-const techCategories: Record<string, string> = {
-  // Languages
-  "Python": "languages",
-  "VHDL": "languages",
-  "Embedded C++": "languages",
-
-  // Frameworks & Libraries
-  "FastAPI": "frameworks",
-  "React": "frameworks",
-  "Recharts": "frameworks",
-
-  // Cloud & Infrastructure
-  "AWS DynamoDB": "cloud",
-  "AWS S3": "cloud",
-  "Docker": "cloud",
-  "Tailscale": "cloud",
-
-  // Automation & AI
-  "n8n": "automation",
-  "Local LLM": "automation",
-  "Home Assistant": "automation",
-  "MaixPy": "automation",
-  "SenseVoice": "automation",
-
-  // Hardware & Fabrication
-  "PLC": "hardware",
-  "Ladder Logic": "hardware",
-  "AutoCAD": "hardware",
-  "Hardware Fabrication": "hardware",
-  "Wiring": "hardware",
-  "Vivado": "hardware",
-  "Quartus": "hardware",
-  "Arduino": "hardware",
-  "Autonomous Navigation": "hardware",
-};
-
-const categoryColors: Record<string, string> = {
-  languages:  "bg-blue-100 text-blue-700 dark:bg-blue-500/10 dark:text-blue-400",
-  frameworks: "bg-cyan-100 text-cyan-700 dark:bg-cyan-500/10 dark:text-cyan-400",
-  cloud:      "bg-orange-100 text-orange-700 dark:bg-orange-500/10 dark:text-orange-400",
-  automation: "bg-purple-100 text-purple-700 dark:bg-purple-500/10 dark:text-purple-400",
-  hardware:   "bg-emerald-100 text-emerald-700 dark:bg-emerald-500/10 dark:text-emerald-400",
-};
+import {useState} from "react";
+import { Project, projectsConfig } from '@/config/projects';
+import { techCategories, categoryColors } from '@/config/techCategories';
+import React, {useEffect, useRef} from "react";
+import { ProjectModal } from "./ProjectModal";
 
 export default function ProjectsContent() {
+  const [activeProject,setActiveProject] = useState<Project | null>(null);
   return (
     <section className="relative z-20 max-w-4xl mx-auto mt-32 mb-12 px-7 lg:px-0">
       <div className="relative z-20 w-full mx-auto lg:mx-0">
@@ -62,11 +23,11 @@ export default function ProjectsContent() {
 
       <div className="z-50 grid items-stretch w-full grid-cols-1 my-8 gap-7 sm:gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {projectsConfig.items.map((project, index) => (
-          <a
+          <button
             key={index}
-            href={project.href}
-            target="_blank"
             className="relative flex flex-col items-stretch duration-300 ease-out p-7 sm:p-3 group h-100 rounded-2xl"
+            type="button"
+            onClick={() => setActiveProject(project)}
           >
             <span className="absolute inset-0 z-20 block w-full h-full duration-300 ease-out bg-transparent border border-transparent border-dashed group-hover:-translate-x-1 group-hover:-translate-y-1 group-hover:border group-hover:border-neutral-300 dark:group-hover:border-neutral-600 group-hover:border-dashed rounded-2xl group-hover:bg-white dark:group-hover:bg-neutral-950"></span>
             <span className="absolute inset-0 z-10 block w-full h-full duration-300 ease-out border border-dashed rounded-2xl border-neutral-300 dark:border-neutral-600 group-hover:translate-x-1 group-hover:translate-y-1"></span>
@@ -110,9 +71,13 @@ export default function ProjectsContent() {
                 })}
               </span>
             </span>
-          </a>
+          </button>
         ))}
       </div>
+      <ProjectModal 
+          selectedProject={activeProject} 
+          onClose={() => setActiveProject(null)} 
+      />
     </section>
   );
 } 
