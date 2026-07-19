@@ -61,15 +61,46 @@ export const projectsConfig: ProjectsPageData = {
       outcomes: "TODO",
     },
     {
-      id: "plc-color-sorting-robot",
-      title: "PLC Color-Sorting Robot",
-      description: "An award-winning PLC-controlled robot that sorts objects by color, built as team lead — covering ladder logic, sensor integration, and AutoCAD wiring diagrams.",
+      id: "custom-production-system",
+      title: "Custom Production System (PLC & FANUC Automation Cell)",
+      description:
+        "Designed and built an industrial automation cell integrating a PLC, FANUC robot, pneumatic part feeder, conveyor system, and safety controls to automate workpiece handling and color-sorting for Centennial College's robotics laboratory.",
+
       imageUrl: "/assets/images/projects/robot.png",
-      gallery: ["/assets/images/projects/robot.png"], // TODO: add more shots
-      tags: ["PLC", "Ladder Logic", "AutoCAD"],
-      breakdown: "Led the team on a PLC-controlled robot that sorts objects by color, covering ladder logic programming, sensor integration, and AutoCAD wiring diagrams.",
-      githubUrl: "TODO",
-      outcomes: "TODO",
+
+      gallery: [
+        "/assets/images/projects/color-sorting/robot-1.png","/assets/images/projects/color-sorting/robot-2.png",
+        "/assets/images/projects/color-sorting/robot-3.png","/assets/images/projects/color-sorting/robot-4.png"
+      ],
+
+      tags: [
+        "PLC",
+        "FANUC Robotics",
+        "Industrial Automation",
+        "Pneumatics",
+        "Electrical Wiring",
+        "AutoCAD",
+        "SMEMA",
+        "Safety Systems"
+      ],
+
+      breakdown:
+        "Developed a customizable production system as part of a six-person engineering capstone project for Centennial College. The system integrated a PLC-controlled pneumatic part feeder, industrial conveyor, FANUC robot interface, electrical control cabinet, and safety circuitry into a complete automated manufacturing cell. The project automated workpiece feeding, completed the laboratory's conveyor line through SMEMA integration, and introduced Industry 4.0 concepts using QR-code-based product identification. Throughout development, the design emphasized reliability, safety, maintainability, and ease of use for future students while requiring mechanical fabrication, electrical wiring, pneumatic design, and system integration.",
+
+      githubUrl: "",
+
+      outcomes:
+        ` • Automated the loading of workpieces into the FANUC robot cell using a 9-piece pneumatic feeding system.
+
+          • Completed and integrated the final conveyor section into the laboratory's existing manufacturing line using SMEMA communication.
+
+          • Eliminated the need for students to manually reach inside the robot cell, significantly improving laboratory safety.
+
+          • Designed and assembled an industrial electrical control cabinet including power distribution, relays, terminal blocks, safety circuits, and field wiring.
+
+          • Applied PLC programming, electrical design, pneumatic control, mechanical fabrication, AutoCAD documentation, and industrial automation principles within a real production environment.
+
+          • Delivered a permanent teaching platform that continues to be used by Centennial College robotics students.`
     },
     {
       id: "plc-student-training-panel",
