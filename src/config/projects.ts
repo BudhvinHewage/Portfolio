@@ -54,6 +54,19 @@ export const projectsConfig: ProjectsPageData = {
       ],
     },
     {
+      id: "Robot Guidance System",
+      title: "8-Bit CPU ALU",
+      description: "A from-scratch 8-bit CPU arithmetic logic unit designed in VHDL, simulated and synthesized using Vivado and Quartus.",
+      imageUrl: "/assets/images/projects/cpu.png",
+      gallery: ["/assets/images/projects/cpu.png"], // TODO: add more shots
+      tags: ["VHDL", "Vivado", "Quartus"],
+      breakdown: "TODO — what design choices did you make in the ALU architecture, and what did Vivado/Quartus synthesis actually involve for you?",
+      githubUrl: "TODO",
+      outcomes: [
+        
+      ],
+    },
+        {
       id: "8-bit-cpu-alu",
       title: "8-Bit CPU ALU",
       description: "A from-scratch 8-bit CPU arithmetic logic unit designed in VHDL, simulated and synthesized using Vivado and Quartus.",
