@@ -91,27 +91,15 @@ export const projectsConfig: ProjectsPageData = {
       ],
 
       breakdown:
-        "We developed a customizable production system as part of a six-person engineering capstone project for Centennial College. \
-         The system integrated a PLC-controlled pneumatic part feeder, industrial conveyor, FANUC robot interface, electrical \
-         control cabinet, and safety circuitry into a complete automated manufacturing cell. The project automated workpiece \
-         feeding, completed the laboratory's conveyor line through SMEMA integration, and introduced Industry 4.0 concepts \
-         using QR-code-based product identification. Throughout development, the design emphasized reliability, safety, \
-         maintainability, and ease of use for future students while requiring mechanical fabrication, electrical wiring, \
-         pneumatic design, and system integration.",
-
+        "Designed and built a PLC training panel from the ground up as an educational platform for learning industrial automation. The project involved sourcing components, machining the enclosure, assembling and wiring electrical devices, and validating system operation. The completed panel was later used to teach PLC fundamentals and provide hands-on instruction to engineering students at Centennial College.",
       githubUrl: "",
 
       outcomes: [
-        "Automated the loading of workpieces into the FANUC robot cell using a 9-piece pneumatic feeding system.",
-
-        "Completed and integrated the final conveyor section into the laboratory's existing manufacturing line using SMEMA communication.",
-
-        "Designed and assembled an industrial electrical control cabinet including power distribution, relays, terminal blocks, safety circuits, and field wiring.",
-
-        "Applied PLC programming, electrical design, pneumatic control, mechanical fabrication, AutoCAD documentation, and industrial automation principles within a real production environment.",
-
-        "Delivered a permanent teaching platform that continues to be used by Centennial College robotics students."
-      ]
+      "Fabricated and wired a complete PLC training panel for hands-on industrial automation training.",
+      "Integrated PLC hardware, electrical devices, and field wiring into a reusable teaching platform.",
+      "Mentored 150+ engineering students on PLC programming, electrical wiring, and troubleshooting.",
+      "Developed practical experience in electrical assembly, hardware fabrication, and industrial control systems."
+    ]
     },
     {
       id: "plc-student-training-panel",
@@ -131,13 +119,29 @@ export const projectsConfig: ProjectsPageData = {
       title: "Autonomous RC Car",
       description: "An Arduino-based RC car with autonomous navigation, built to explore embedded control and sensor-driven decision-making.",
       imageUrl: "/assets/images/projects/rc-car.png",
-      gallery: ["/assets/images/projects/rc-car.png"], // TODO: add more shots
-      tags: ["Arduino", "Embedded C++", "Autonomous Navigation"],
-      breakdown: "TODO — what sensors/logic actually drove the navigation decisions on the RC car?",
+      gallery: ["/assets/images/projects/rc-car/car-1.jpg","/assets/images/projects/rc-car/car-2.jpg","/assets/images/projects/rc-car/car-3.jpg","/assets/images/projects/rc-car/car-4.jpg"], // TODO: add more shots
+      tags: [
+        "Arduino",
+        "Embedded C++",
+        "Bluetooth",
+        "Ultrasonic Sensing",
+        "Motor Control",
+        "Embedded Systems",
+        "Mechanical Design",
+        "Electrical Wiring",
+        "Hardware Integration",
+        "CAD",
+        "Robotics",
+      ],
+      breakdown:
+  "Designed and built a four-wheel skid-steer robotic vehicle for a semester-long robotics competition using Arduino, Bluetooth communication, ultrasonic sensing, and custom mechanical and electrical systems. The vehicle was engineered to traverse ramps, retrieve objects, and complete the course reliably while balancing speed, stability, and maneuverability. Throughout development, the design was refined through hardware iteration, component validation, and electrical troubleshooting to improve overall system performance.",
       githubUrl: "TODO",
       outcomes: [
-
-      ],
+  "Developed Arduino firmware integrating Bluetooth control, ultrasonic sensing, PWM motor control, and object retrieval logic.",
+  "Resolved motor driver compatibility and power delivery issues through hardware redesign and component validation.",
+  "Designed a four-wheel skid-steer chassis optimized for stability, maneuverability, and reliable ramp traversal.",
+  "Placed 1st in the final robotics competition through iterative mechanical, electrical, and software improvements."
+],
     },
   ]
 } as const;
