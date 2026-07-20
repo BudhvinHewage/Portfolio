@@ -66,7 +66,11 @@ export function ProjectModal({selectedProject, onClose}: ProjectModalProps) {
                             {selectedProject?.breakdown}
                         </span>
                         <span className="text-sm text-neutral-600 dark:text-neutral-400 block">
-                            {selectedProject?.outcomes}
+                            <ul className="list-disc list-inside">
+                                {selectedProject?.outcomes.map((outcome, index) => {
+                                    return <li key={index}>{outcome}</li>;
+                                })}
+                            </ul>
                         </span>
                         <span className="text-sm text-neutral-600 dark:text-neutral-400 block flex-wrap">
                             <a href={selectedProject?.githubUrl} className="text-blue-600 underline">View on GitHub</a>

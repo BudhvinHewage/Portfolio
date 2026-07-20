@@ -1,41 +1,13 @@
-# Multiple Page Portfolio - A modern, responsive portfolio website built with Next.js 14, featuring multiple pages including a blog system, projects showcase, and about page.
+# Portfolio
 
-#### Preview
+Personal portfolio site — built with Next.js (static export), TypeScript, and Tailwind CSS.
 
- - [Demo](https://themewagon.github.io/multiplepage-portfolio/)
+## Stack
 
-#### Download
- - [Download from ThemeWagon](https://themewagon.com/themes/multiplepage-portfolio/)
+- **Frontend:** Next.js (SSG via static export), React, TypeScript, Tailwind CSS
+- **Deployment:** Docker (nginx), running on a self-hosted Proxmox LXC
+- **CI/CD:** Self-hosted GitHub Actions runner — builds and redeploys automatically on every push to `main`
 
 ## Getting Started
 
-1. Clone Repository
-```
-git clone https://github.com/themewagon/multiplepage-portfolio.git
-```
-2. Install Dependencies
-```
-npm i
-```
-3. Run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-## Author 
-```
-Design and code is completely written by tomcomtang and development team. 
-```
-
-## License
-
- - Design and Code is Copyright &copy; <a href="https://github.com/tomcomtang" target="_blank">tomcomtang</a>
- - Licensed cover under [ISC]
- - Distributed by <a href="https://themewagon.com" target="_blank">ThemeWagon</a>
+1. Clone the repository
