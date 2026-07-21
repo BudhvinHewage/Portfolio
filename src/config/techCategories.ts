@@ -16,9 +16,9 @@ export const techCategories: Record<string, string> = {
   "AWS S3": "cloud",
   "Docker": "cloud",
   "Tailscale": "cloud",
+  "Proxmox": "cloud",
   "Unraid": "cloud",
-  "NAS": "cloud",
-  "Storage": "cloud",
+  "Proxmox Backup Server": "cloud",
   "BTRFS": "cloud",
 
   // Automation & AI
@@ -52,7 +52,6 @@ export const techCategories: Record<string, string> = {
   "Omron": "industrial",
 
   // Hardware & Fabrication
-  "Ladder Logic": "hardware",
   "AutoCAD": "hardware",
   "Hardware Fabrication": "hardware",
   "Electrical Wiring": "hardware",

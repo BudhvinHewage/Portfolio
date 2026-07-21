@@ -66,7 +66,7 @@ export function ProjectModal({selectedProject, onClose}: ProjectModalProps) {
                             {selectedProject?.breakdown}
                         </span>
                         <span className="text-sm text-neutral-600 dark:text-neutral-400 block">
-                            <ul className="list-disc list-inside">
+                            <ul className="list-disc list-outside">
                                 {selectedProject?.outcomes.map((outcome, index) => {
                                     return <li key={index}>{outcome}</li>;
                                 })}

@@ -1,4 +1,3 @@
-import React, { useEffect, useRef } from "react";
 import { techCategories, categoryColors } from "@/config/techCategories";
 
 export interface Project {
@@ -10,7 +9,7 @@ export interface Project {
   gallery: string[];
   breakdown: string;
   githubUrl: string;
-  outcomes: string[]; // name TBD
+  outcomes: string[];
 }
 
 export interface ProjectsPageData {
@@ -33,7 +32,7 @@ export const projectsConfig: ProjectsPageData = {
       description:
         "A full-stack monitoring pipeline for my homelab: a custom Python wrapper around lm-sensors streams host metrics into AWS DynamoDB and S3, served through a FastAPI backend to a React + Tailwind + Recharts frontend. Containerized with Docker and exposed publicly via Nginx Proxy Manager and Cloudflare.",
       imageUrl: "/assets/images/projects/dashboard.png",
-      gallery: ["/assets/images/projects/dashboard.png"], // TODO: add more shots
+      gallery: ["/assets/images/projects/dashboard/Dashboard.png"], 
       tags: ["Python", "AWS DynamoDB", "AWS S3", "FastAPI", "React", "Recharts", "Docker"],
       breakdown:
         "Built a custom Python wrapper around lm-sensors running directly on the Proxmox host, pushing metrics into AWS DynamoDB (with a 24-hour TTL) and S3. A FastAPI backend serves that data to a React + Tailwind + Recharts frontend. The whole stack is containerized with Docker and exposed publicly through Nginx Proxy Manager and Cloudflare.",
@@ -46,7 +45,7 @@ export const projectsConfig: ProjectsPageData = {
       description:
         "An in-progress smart entry system combining on-device face recognition and local speech-to-text (MaixPy, SenseVoice) on a MaixCAM 2. Events are posted to n8n, routed through a local LLM bridged over Tailscale, and trigger Home Assistant automations.",
       imageUrl: "/assets/images/projects/smart-vision.png",
-      gallery: ["/assets/images/projects/smart-vision.png"], // TODO: add more shots
+      gallery: ["/assets/images/projects/smartvision/maixcam2.jpg"], 
       tags: ["MaixPy", "SenseVoice", "n8n", "Local LLM", "Tailscale", "Home Assistant"],
       breakdown:
         "An in-progress smart entry system: on-device face recognition (MaixPy) and local speech-to-text (SenseVoice) on a MaixCAM 2 post events over HTTP to n8n, which routes them to a local LLM (LM Studio, bridged over Tailscale) before triggering Home Assistant automation webhooks.",
@@ -54,16 +53,19 @@ export const projectsConfig: ProjectsPageData = {
       outcomes: [],
     },
     {
-      id: "Robot Guidance System",
-      title: "8-Bit CPU ALU",
+      id: "robot-guidance-challenge",
+      title: "Robot Guidance Challenge",
       description:
-        "A from-scratch 8-bit CPU arithmetic logic unit designed in VHDL, simulated and synthesized using Vivado and Quartus.",
-      imageUrl: "/assets/images/projects/cpu.png",
-      gallery: ["/assets/images/projects/cpu.png"], // TODO: add more shots
-      tags: ["VHDL", "Vivado", "Quartus"],
+        "An HC12-based mobile robot programmed in assembly to autonomously learn and solve a line-tracked maze, then retrace its path.",
+      imageUrl: "/assets/images/projects/robotguidance-challenge.jpg",
+      gallery: [
+        "/assets/images/projects/robotguidance/guidance-robot.jpg",
+        "/assets/images/projects/robotguidance/robot-path.png"
+      ],
+      tags: ["Assembly", "HC12/HCS12", "Finite State Machines", "Embedded Systems"],
       breakdown:
-        "TODO — what design choices did you make in the ALU architecture, and what did Vivado/Quartus synthesis actually involve for you?",
-      githubUrl: "TODO",
+        "A university lab project (COE538) requiring an eebot mobile robot, programmed in HC12 assembly, to navigate an unknown maze using line-tracking sensors. The robot had to detect intersections, choose a branch, detect dead ends via a front bumper, and back out to try the alternate branch — recording each corrected decision so it could learn the maze's solution over one pass and retrace it error-free on the way back. Source files in the repo include dedicated routines for intersection detection, turn-angle calculation, and a data structure for storing the maze's learned path.",
+      githubUrl: "https://github.com/BudhvinHewage/Robot-Guidance-Challenge",
       outcomes: [
         "Successfully navigated the full round trip — the only student in the class to get the robot back to the starting point without errors.",
         "Implemented the maze-solution data structure as an array, recording the correct direction at each intersection so the robot could retrace its path on the return leg.",
@@ -76,7 +78,10 @@ export const projectsConfig: ProjectsPageData = {
       description:
         "A from-scratch 8-bit CPU built in VHDL on an FPGA, combining registers, a decoder, a finite state machine, and an ALU to execute a defined instruction set.",
       imageUrl: "/assets/images/projects/cpu.png",
-      gallery: ["/assets/images/projects/cpu.png"], // TODO: add more shots — waveform/schematic figures from the report would work well here
+      gallery: [
+        "/assets/images/projects/8bitcpu-vhd/CPU Block Diagram.png",
+        "/assets/images/projects/8bitcpu-vhd/waveformresult-problem1.png"
+      ],
       tags: ["VHDL", "Quartus", "FPGA", "Digital Logic Design"],
       breakdown:
         "Designed and implemented a simple 8-bit CPU in VHDL, synthesized and tested on an FPGA board using Quartus. The system combined registers acting as clocked latches, a 3-to-8 decoder built from smaller 2-to-4 and 1-to-2 decoder stages, a finite state machine driving operation selection, and an ALU executing a defined microcode instruction set (arithmetic, logic, shift, and rotate operations). Results were verified per-operation by reading waveform simulations and cross-checking expected vs. actual register values across each opcode.",
@@ -101,22 +106,22 @@ export const projectsConfig: ProjectsPageData = {
       ],
       tags: [
         "FANUC Robotics",
-        "Pneumatics & Electro-Pneumatics",
-        "PLC & Industrial Automation",
+        "Pneumatics",
+        "PLC",
         "SMEMA Protocol",
         "Safety Systems",
-        "Precision Machining",
-        "24VDC Distribution",
-        "AutoCAD / Technical Schematics",
+        "Hardware Fabrication",
+        "Electrical Wiring",
+        "AutoCAD",
       ],
       breakdown:
-        "Engineered and retrofitted a custom workpiece feeder and conveyor line into an existing FANUC robot room (Cell 7) to eliminate hazardous operator manual entry past safety light curtains. Designed a 9-block horizontal feeder magazine powered by dual SMC rodless cylinders (MY3B / MY3A) and a resilient 4-rod spring stand to safety-dampen robotic pick-and-place landings. Machined custom aluminum plates and mounting brackets with reamed bushing pilot holes, hardwired 24VDC solenoids and optical sensors to the FANUC controller via an MR-50LW (CRMA15) interface, and implemented SMEMA communication protocols with upstream/downstream cell stations for automated job routing.",
+        "Engineered and retrofitted a custom workpiece feeder and conveyor line into an existing FANUC robot cell (Cell 7) to eliminate hazardous operator manual entry past safety light curtains. Designed a 9-block horizontal feeder magazine powered by dual SMC rodless cylinders (MY3B / MY3A) and a resilient 4-rod spring stand to safety-dampen robotic pick-and-place landings. The existing cell's sensor wiring had to be rewired and consolidated to integrate the new feeder, including installing and wiring a dedicated color-sensing sensor used to sort incoming workpieces by color as part of the automated handling sequence. Machined custom aluminum plates and mounting brackets with reamed bushing pilot holes, hardwired 24VDC solenoids and optical sensors to the FANUC controller via an MR-50LW (CRMA15) interface, and implemented SMEMA communication protocols with upstream/downstream cell stations for automated job routing.",
       githubUrl: "",
       outcomes: [
-        "Fabricated and wired a complete PLC training panel for hands-on industrial automation training.",
-        "Integrated PLC hardware, electrical devices, and field wiring into a reusable teaching platform.",
-        "Mentored 150+ engineering students on PLC programming, electrical wiring, and troubleshooting.",
-        "Developed practical experience in electrical assembly, hardware fabrication, and industrial control systems.",
+        "Eliminated hazardous manual part entry past safety light curtains by fully automating the feed process.",
+        "Rewired and consolidated the FANUC cell's sensor harness to integrate a new color-sorting sensor and feeder without disrupting existing cell operation.",
+        "Built a 9-block horizontal feeder magazine with dual SMC rodless cylinders and a spring-dampened landing stand for reliable robotic pick-and-place.",
+        "Implemented SMEMA communication for automated upstream/downstream job routing between cell stations.",
       ],
     },
     {
@@ -131,7 +136,6 @@ export const projectsConfig: ProjectsPageData = {
         "/assets/images/projects/plc-panel/plc-4.png",
         "/assets/images/projects/plc-panel/plc-1.png",
       ],
-      githubUrl: "",
       tags: [
         "PLC",
         "Siemens",
@@ -144,6 +148,7 @@ export const projectsConfig: ProjectsPageData = {
       ],
       breakdown:
         "Revitalized an incomplete legacy laboratory project into a fully operational, multi-platform PLC training panel. The process involved sourcing components, liaising with manufacturers, and performing hands-on metal fabrication — machining aluminum extrusions, filing, and precision-drilling metal mounting plates. Engineered a unified multi-vendor control environment integrating Siemens (S7-1200, S7-200), Allen-Bradley (CompactLogix, SLC 500), and Omron (CJ1M) controllers alongside an Omron NS8 HMI and DB-50 break-out I/O interfaces. Developed comprehensive I/O schematics, wired power distribution (24VDC, MCR safety relay, individual circuit breakers), integrated pneumatic actuators with DCV manifolds, and configured analog instrumentation (pressure regulators and heating elements) before validating system safety and deploying it for student instruction.",
+      githubUrl: "",
       outcomes: [
         "Rescued and completed an unfinished panel build, taking it from orphaned hardware to a fully functional, multi-vendor educational workstation.",
         "Fabricated structural framing and custom mounting plates using 40-series aluminum extrusions, wire ducting, and machine shop tools.",
@@ -163,7 +168,7 @@ export const projectsConfig: ProjectsPageData = {
         "/assets/images/projects/rc-car/car-2.jpg",
         "/assets/images/projects/rc-car/car-3.jpg",
         "/assets/images/projects/rc-car/car-4.jpg",
-      ], // TODO: add more shots
+      ],
       tags: [
         "Arduino",
         "Embedded C++",
@@ -188,19 +193,42 @@ export const projectsConfig: ProjectsPageData = {
       ],
     },
     {
-  id: "homelab-infrastructure",
-  title: "Self-Hosted Homelab (Proxmox + NAS)",
-  description: "A two-node homelab: a Proxmox host running all active compute — Docker LXCs, VMs, and a dozen self-hosted services — paired with a dedicated Unraid NAS handling storage and automated backups.",
-  imageUrl: "TODO", // needs a real image — a rack photo, or a dashboard screenshot like the one you just shared
-  gallery: [],
-  tags: ["Proxmox", "Unraid", "Docker", "Proxmox Backup Server", "Home Assistant", "n8n", "BTRFS"],
-  breakdown: "A deliberately two-node homelab, splitting compute and storage across dedicated hardware rather than running everything on one box. 'Capital' (Proxmox) handles 100% of active compute — Docker LXCs and VMs running Home Assistant, n8n, Nginx Proxy Manager, Portainer, Vaultwarden, Jellyfin, Kavita, Pi-hole, and this portfolio site's own CI/CD runner among others. A separate Unraid NAS is scoped strictly to storage and backups — no active applications run there by design. Its array runs two 12TB drives (parity + data) behind a BTRFS cache pool, and Proxmox Backup Server, running as a Docker container on the NAS, pulls hourly backups of every LXC and VM from the compute node with a rolling one-week retention window, pruned automatically. Keeping compute and backups on physically separate hardware means a failure on the compute node doesn't threaten backup integrity, and vice versa.",
-  githubUrl: "https://github.com/BudhvinHewage/homelab-infrastructure", // TODO: doesn't exist yet — create it first
-  outcomes: [
-    "Runs a dozen+ self-hosted services continuously on a single compute node without resource contention becoming a practical problem.",
-    "Achieved fully automated, hourly backup coverage of every LXC and VM with zero manual intervention required.",
-    "Physically isolated backup storage from compute, so a compute-node failure can't also take out the backups meant to recover from it.",
-  ],
-},
+      id: "homelab-infrastructure",
+      title: "Self-Hosted Homelab (Proxmox + NAS)",
+      description:
+        "A two-node homelab: a Proxmox host running all active compute — Docker LXCs, VMs, and a dozen self-hosted services — paired with a dedicated Unraid NAS handling storage and automated backups.",
+      imageUrl: "/assets/images/projects/Server Clipart.png",
+      gallery: [
+        "/assets/images/projects/homelab/Homepage Panel.png",
+        "/assets/images/projects/homelab/NAS Server.png",
+        "/assets/images/projects/homelab/Proxmox Server.jpg",
+        "/assets/images/projects/homelab/homelab_network_topology.png"
+      ],
+      tags: ["Proxmox", "Unraid", "Docker", "Proxmox Backup Server", "Home Assistant", "n8n", "BTRFS"],
+      breakdown:
+        "A deliberately two-node homelab, splitting compute and storage across dedicated hardware rather than running everything on one box. 'Capital' (Proxmox) handles 100% of active compute — Docker LXCs and VMs running Home Assistant, n8n, Nginx Proxy Manager, Portainer, Vaultwarden, Jellyfin, Kavita, Pi-hole, and this portfolio site's own CI/CD runner among others. A separate Unraid NAS is scoped strictly to storage and backups — no active applications run there by design. Its array runs two 12TB drives (parity + data) behind a BTRFS cache pool, and Proxmox Backup Server, running as a Docker container on the NAS, pulls hourly backups of every LXC and VM from the compute node with a rolling one-week retention window, pruned automatically. Keeping compute and backups on physically separate hardware means a failure on the compute node doesn't threaten backup integrity, and vice versa.",
+      githubUrl: "https://github.com/BudhvinHewage/homelab-infrastructure",
+      outcomes: [
+        "Runs a dozen+ self-hosted services continuously on a single compute node without resource contention becoming a practical problem.",
+        "Achieved fully automated, hourly backup coverage of every LXC and VM with zero manual intervention required.",
+        "Physically isolated backup storage from compute, so a compute-node failure can't also take out the backups meant to recover from it.",
+      ],
+    },
   ],
 } as const;
+
+
+
+/*
+    {
+      id: "8-bit-cpu-verilog",
+      title: "8-Bit CPU Redesign (Verilog) — In Progress",
+      description: "TODO — revisiting the ALU/CPU design in Verilog instead of VHDL.",
+      imageUrl: "/assets/images/projects/cpu.png",
+      gallery: [],
+      tags: ["Verilog"],
+      breakdown: "TODO",
+      githubUrl: "TODO",
+      outcomes: [],
+    },
+*/

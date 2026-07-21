@@ -19,11 +19,11 @@ export default function ProjectsContent() {
         </p>
       </div>
 
-      <div className="z-50 grid items-stretch w-full grid-cols-1 my-8 gap-7 sm:gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="z-50 flex flex-wrap justify-center items-stretch w-full my-8 gap-7 sm:gap-5">
         {projectsConfig.items.map((project, index) => (
           <button
             key={project.id}
-            className="relative flex flex-col items-stretch duration-300 ease-out p-7 sm:p-3 group h-100 rounded-2xl"
+            className="relative flex flex-col items-stretch duration-300 ease-out p-7 sm:p-3 group rounded-2xl w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-0.85rem)]"
             type="button"
             onClick={() => setActiveProject(project)}
           >
@@ -41,7 +41,7 @@ export default function ProjectsContent() {
               </span>
               <span className="block w-full px-1 mt-5 mb-1 sm:mt-3">
                 <span className="flex items-center mb-0 text-base font-semibold tracking-tight text-neutral-900 dark:text-neutral-100">
-                  <span>{project.title}</span>
+                  <span className="" >{project.title}</span>
                   <svg
                     className="group-hover:translate-x-0 group-hover:translate-y-0 -rotate-45 translate-y-1 -translate-x-1 w-2.5 h-2.5 stroke-current ml-1 transition-all ease-in-out duration-200 transform"
                     viewBox="0 0 13 15"
@@ -62,11 +62,34 @@ export default function ProjectsContent() {
                 <span className="text-sm text-neutral-600 dark:text-neutral-400 block truncate">
                   {project.description}
                 </span>
-                {project.tags.map((tag, index) => {
-                  const category = techCategories[tag]
-                  const categoryColor = categoryColors[category]
-                  return (<span key={index} className={`inline-block ${categoryColor} text-xs font-medium mr-2 px-2.5 py-0.5 rounded`}>{tag}</span>)
-                })}
+                {(() => {
+                  const MAX_TAGS = 3
+                  const visibleTags = project.tags.slice(0, MAX_TAGS)
+                  const remainingCount = project.tags.length - MAX_TAGS
+
+                  return (
+                    <>
+                      {visibleTags.map((tag, index) => {
+                        const category = techCategories[tag]
+                        const categoryColor = categoryColors[category]
+                        return (
+                          <span 
+                            key={index} 
+                            className={`inline-block ${categoryColor} text-xs font-medium mr-2 px-2.5 py-0.5 rounded`}
+                          >
+                            {tag}
+                          </span>
+                        )
+                      })}
+                      
+                      {remainingCount > 0 && (
+                        <span className="inline-block bg-gray-100 text-gray-600 text-xs font-medium px-2.5 py-0.5 rounded dark:bg-gray-800 dark:text-gray-300">
+                          +{remainingCount} more
+                        </span>
+                      )}
+                    </>
+                  )
+                })()}
               </span>
             </span>
           </button>
