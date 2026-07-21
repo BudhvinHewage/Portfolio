@@ -47,14 +47,14 @@ export const projectsConfig: ProjectsPageData = {
         "Proxmox"
       ],
       breakdown:
-        "Proxmox doesn't expose host temperature sensors through its API, so I configured a " +
+        "Proxmox doesn't expose it's temperature sensors through its API, so I configured a " +
         "systemd timer to run lm-sensors every 30 seconds and serve data via a local Python process. " +
         "A central Python collector merges these thermal stats with Proxmox API telemetry into a single " +
         "snapshot. Snapshots push to AWS DynamoDB with a 24-hour TTL for real-time charts and S3 for " +
         "long-term logs. A FastAPI backend exposes status and range-filtered history endpoints to a " +
         "React frontend, with everything containerized via Docker and deployed behind Cloudflare. " +
-        "This architectural setup ensures zero overhead on the hypervisor host while preserving granular " +
-        "historical data for thermal performance analysis over time.",
+        "This architectural setup ensures zero overhead on the hypervisor host while preserving " +
+        "historical data.",
       githubUrl: "https://github.com/BudhvinHewage/homelab-telemetry",
       outcomes: [
         "Bypassed Proxmox API limitations by combining systemd host scripts with a lightweight local telemetry bridge.",
@@ -75,8 +75,8 @@ export const projectsConfig: ProjectsPageData = {
         "This project offloads vision and audio tasks entirely to edge hardware using a MaixCAM 2. " +
         "On-device face recognition (MaixPy) and local speech-to-text (SenseVoice) process live " +
         "inputs and dispatch JSON payloads over HTTP to an n8n workflow engine. The workflow routes " +
-        "the event context through a local LLM hosted in LM Studio—connected securely over Tailscale—which " +
-        "evaluates the intent and fires targeted webhooks to Home Assistant to handle door access. " +
+        "the event context through a local LLM hosted in LM Studio—connected securely over Tailscale. Which " +
+        "evaluates the intent and fires targeted webhooks to Home Assistant to handle requests as needed. " +
         "By keeping inference local, the system maintains fast response times without streaming home " +
         "video feeds to commercial third-party cloud services.",
       githubUrl: "https://github.com/BudhvinHewage/Isolated-Vision-System",
@@ -109,7 +109,7 @@ export const projectsConfig: ProjectsPageData = {
         "learned path.",
       githubUrl: "https://github.com/BudhvinHewage/Robot-Guidance-Challenge",
       outcomes: [
-        "Successfully navigated the full round trip — the only student in the class to " +
+        "Successfully navigated the full round trip and was the only student in the class to " +
           "get the robot back to the starting point without errors.",
         "Implemented the maze-solution data structure as an array, recording the correct " +
           "direction at each intersection so the robot could retrace its path on the return leg.",
