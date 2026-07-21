@@ -10,6 +10,7 @@ export const techCategories: Record<string, string> = {
   "FastAPI": "frameworks",
   "React": "frameworks",
   "Recharts": "frameworks",
+  "Tailwind CSS": "frameworks",
 
   // Cloud & Infrastructure
   "AWS DynamoDB": "cloud",
