@@ -118,7 +118,7 @@ export const projectsConfig: ProjectsPageData = {
     },
     {
       id: "8-bit-cpu-alu-vhdl",
-      title: "8-Bit CPU ALU (VHD)",
+      title: "8-Bit CPU ALU (VHDL)",
       description:
         "A custom 8-bit CPU synthesized in VHDL and flashed to an FPGA board, combining " +
         "a finite state machine, instruction decoder, and ALU.",
