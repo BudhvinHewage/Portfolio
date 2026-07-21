@@ -71,7 +71,7 @@ export default function ProjectsContent() {
                     <>
                       {visibleTags.map((tag, index) => {
                         const category = techCategories[tag]
-                        const categoryColor = categoryColors[category]
+                        const categoryColor = categoryColors[category as keyof typeof categoryColors]
                         return (
                           <span 
                             key={index} 
