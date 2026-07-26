@@ -1,7 +1,7 @@
 export const globalConfig = {
   site: {
     name: "Budhvin's Portfolio",
-    author: "Budhvin Hewage",
+    author: "Budhvin's Portfolio",
     description: "A portfolio website showcasing my projects, skills, and experience in software development and hardware design.",
     url: "/"
   },

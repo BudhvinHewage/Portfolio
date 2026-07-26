@@ -42,7 +42,7 @@ export default function AboutContent() {
           <h2 className="mb-2 text-2xl font-bold dark:text-neutral-200">
             {aboutConfig.experience.title}
           </h2>
-          <div className="py-10">
+          <div className="py-10 ">
             {aboutConfig.experience.items.map((item) => (
               <div key={`${item.company}-${item.period}`} className="pb-10 border-l border-gray-200 last:border-l-0 dark:border-neutral-700">
                 <div className="relative flex flex-col justify-start pl-12">

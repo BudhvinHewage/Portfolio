@@ -19,11 +19,11 @@ export default function ProjectsContent() {
         </p>
       </div>
 
-      <div className="z-50 flex flex-wrap justify-center items-stretch w-full my-8 gap-5">
+      <div className="z-50 flex flex-wrap justify-center items-stretch max-w-full my-8 gap-5">
         {projectsConfig.items.map((project, index) => (
           <button
             key={project.id}
-            className="relative flex flex-col items-stretch duration-300 ease-out p-4 sm:p-3 group rounded-2xl w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-0.85rem)]"
+            className="relative flex flex-col duration-300 ease-out p-3 group rounded-2xl max-w-[320px] sm:w-[calc(50%-0.625rem)] lg:w-[calc(33.333%-0.85rem)]"
             type="button"
             onClick={() => setActiveProject(project)}
           >

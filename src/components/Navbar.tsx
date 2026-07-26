@@ -40,7 +40,7 @@ export default function Navbar() {
   };
 
   return (
-    <header id="header" className="absolute top-0 z-50 w-full h-20">
+    <header id="header" className="absolute top-0 z-50 w-full max-h-20 pt-4">
       <div className="flex items-center justify-between h-full max-w-7xl pl-6 pr-4 mx-auto border-b border-l-0 border-r-0 border-transparent select-none lg:border-r lg:border-l lg:rounded-b-xl">
         <Link href="/" className="h-5 text-base group relative z-30 flex items-center space-x-1.5 text-black dark:text-white font-semibold whitespace-nowrap">
           <span className="text-xl -translate-y-0.5 group-hover:-rotate-12 group-hover:scale-[1.2] ease-in-out duration-300">✦</span>
