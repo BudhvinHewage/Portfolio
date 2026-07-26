@@ -35,6 +35,7 @@ export function ProjectModal({selectedProject, onClose}: ProjectModalProps) {
         w-full
         max-w-5xl
         max-h-[90vh]
+        flex
         overflow-y-auto">
         <div className='p-6'>
             <div key={selectedProject?.id} className="flex flex-col gap-4">

@@ -15,7 +15,7 @@ export default function AboutContent() {
             </p>
           </div>
           <div className="w-full md:w-1/2 flex justify-end">
-            <div className="relative w-[360px] h-[360px]">
+            <div className="relative w-full max-w-[360px] h-[360px] mx-auto md:mx-0">
               <Image
                 src={aboutConfig.image}
                 alt="Profile"
@@ -37,7 +37,7 @@ export default function AboutContent() {
         </div>
       </div>
 
-      <div className="flex flex-col md:flex-row mt-20">
+      <div className="flex flex-col md:flex-row mt-20 pl-3">
         <div className="flex-1">
           <h2 className="mb-2 text-2xl font-bold dark:text-neutral-200">
             {aboutConfig.experience.title}
@@ -68,7 +68,7 @@ export default function AboutContent() {
           </div>
         </div>
 
-        <div className="w-[360px] ml-8">
+        <div className="w-full md:w-[360px] md:ml-8">
           <h2 className="mb-2 text-2xl font-bold dark:text-neutral-200">{aboutConfig.education.title}</h2>
           <div className="py-[30px] space-y-8">
             {aboutConfig.education.items.map((item) => (
