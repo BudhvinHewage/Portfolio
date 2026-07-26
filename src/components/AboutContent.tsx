@@ -3,7 +3,7 @@ import { aboutConfig } from "@/config/about";
 
 export default function AboutContent() {
   return (
-    <section className="relative z-20 w-[896px] mx-auto mt-32 mb-12">
+    <section className="relative z-20 w-full max-w-[896px] mx-auto mt-32 mb-12 px-4 sm:px-0">
       <div className="relative z-20 w-full mx-auto lg:mx-0">
         <h2 className="text-2xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100 sm:text-3xl lg:text-4xl">
           {aboutConfig.title}
