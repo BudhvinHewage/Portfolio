@@ -48,7 +48,7 @@ export function ProjectModal({selectedProject, onClose}: ProjectModalProps) {
                     ✕ Close
                 </button>
                 </div>
-                <div className="gap-6 lg:flex-row flex flex-1 p-4">
+                <div className="gap-6 flex flex-col lg:flex-row flex-1 p-4">
                     <Gallery images={selectedProject?.gallery ?? []} />
                     <div className='flex flex-col min-w-0 flex-1 gap-3'>
                         <div className="flex flex-wrap gap-2">
