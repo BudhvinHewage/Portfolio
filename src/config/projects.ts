@@ -87,6 +87,26 @@ export const projectsConfig: ProjectsPageData = {
       ]
     },
     {
+      id: "8-bit-cpu-verilog",
+      title: "8-Bit CPU Redesign (Verilog)",
+      description:
+        "A from-scratch Verilog port of the 8-bit CPU/ALU, targeting a Digilent Basys 3 FPGA — every module independently re-derived and simulated rather than transliterated from the original VHDL.",
+      imageUrl: "/assets/images/projects/cpu.png",
+      gallery: [
+        "/assets/images/projects/8bitcpu-verilog/basys3-topview.jpg",
+      ],
+      tags: ["Verilog", "Vivado", "FPGA", "Digital Logic Design"],
+      breakdown:
+        "A hierarchical redesign of the original VHDL CPU/ALU, built and simulated in Vivado for the Digilent Basys 3 (Artix-7). The datapath is a free-running enable-gated state counter driving a 3-to-8 one-hot decoder, which selects one of eight ALU operations against two switch-loaded input registers, with results shown on a time-multiplexed 7-segment display. A deliberate design choice worth noting: the state controller isn't a 'real' FSM in the branching sense — it's a mod-8 counter that advances one state per button press, chosen specifically to give deterministic, manually-steppable testing on physical hardware rather than free-running automatically. All sequential modules share one reset pattern (asynchronous, active-high), and a single external Reset_All port fans out internally to all four reset nets, so one physical button clears the entire datapath.",
+      githubUrl: "https://github.com/BudhvinHewage/Verilog-8-Bit-CPU",
+      outcomes: [
+        "Independently re-derived and simulated all 7 modules in Verilog rather than transliterating the VHDL source line-by-line.",
+        "Ran RTL linting and removed unused wires flagged during analysis, with zero violations remaining.",
+        "Implementation run surfaced a real hardware requirement mid-design — a physical Enable_Decoder button was added and pin-constrained after the fact to gate the decoder correctly.",
+        "Consolidated four separate internal reset nets behind a single external Reset_All port, pin-constraining every top-level port for the Basys 3.",
+      ],
+    },
+    {
       id: "robot-guidance-challenge",
       title: "Robot Guidance Challenge",
       description:
