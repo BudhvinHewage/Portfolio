@@ -7,23 +7,6 @@ export const aboutConfig = {
   and exploring the outdoors. Ultimately, I love learning, taking pride in what I build, and solving real-world problems as \
   I take on new challenges.",
   image: "/assets/images/about.jpg",
-  skills: [
-    "Next.js",
-    "React",
-    "TypeScript",
-    "Tailwind CSS",
-    "Python",
-    "FastAPI",
-    "Docker",
-    "Git",
-    "AWS (DynamoDB, S3)",
-    "Unreal Engine",
-    "n8n",
-    "VHDL",
-    "PLC / Ladder Logic",
-    "AutoCAD",
-    "Arduino"
-  ],
   experience: {
     title: "Experience",
     items: [
@@ -91,7 +74,6 @@ export const aboutConfig = {
       {
         category: "Technology & Electronics",
         items: ["DIY Electronics", "Custom PC Assembly", "3D Printing"]
-        // TODO: decide whether homelab/current projects belong here or get their own line
       },
       {
         category: "Board Games",

@@ -1,7 +1,17 @@
 import Image from "next/image";
 import { aboutConfig } from "@/config/about";
+import { techCategories, categoryColors, categoryLabels } from "@/config/techCategories";
 
 export default function AboutContent() {
+  const groupedSkills = Object.entries(techCategories).reduce<Record<string, string[]>>(
+    (acc, [skill, category]) => {
+      acc[category] = acc[category] ?? [];
+      acc[category].push(skill);
+      return acc;
+    },
+    {}
+  );
+
   return (
     <section className="relative z-20 w-full max-w-[896px] mx-auto mt-32 mb-12 px-4 sm:px-0">
       <div className="relative z-20 w-full mx-auto lg:mx-0">
@@ -28,12 +38,27 @@ export default function AboutContent() {
           </div>
         </div>
 
-        <div className="mt-8 flex flex-wrap gap-2">
-          {aboutConfig.skills.map((skill) => (
-            <span key={skill} className="px-3 py-1 text-sm bg-neutral-200 dark:bg-neutral-700 text-neutral-700 dark:text-neutral-200 rounded-full">
-              {skill}
-            </span>
-          ))}
+        <div className="mt-10">
+          <h2 className="mb-4 text-2xl font-bold dark:text-neutral-200">Skills</h2>
+          <div className="space-y-5">
+            {Object.entries(groupedSkills).map(([category, skills]) => (
+              <div key={category}>
+                <p className="mb-2 text-sm font-medium text-neutral-700 dark:text-neutral-300">
+                  {categoryLabels[category] ?? category}
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {skills.map((skill) => (
+                    <span
+                      key={skill}
+                      className={`px-3 py-1 text-sm rounded-full ${categoryColors[category] ?? "bg-gray-200"}`}
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 

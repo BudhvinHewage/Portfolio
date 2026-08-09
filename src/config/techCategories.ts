@@ -1,16 +1,19 @@
 export const techCategories: Record<string, string> = {
   // Languages
   "Python": "languages",
+  "TypeScript": "languages",
   "VHDL": "languages",
   "Verilog": "languages",
   "Embedded C++": "languages",
   "Assembly": "languages",
 
   // Frameworks & Libraries
+  "Next.js": "frameworks",
   "FastAPI": "frameworks",
   "React": "frameworks",
   "Recharts": "frameworks",
   "Tailwind CSS": "frameworks",
+  "Unreal Engine": "frameworks",
 
   // Cloud & Infrastructure
   "AWS DynamoDB": "cloud",
@@ -21,6 +24,7 @@ export const techCategories: Record<string, string> = {
   "Unraid": "cloud",
   "Proxmox Backup Server": "cloud",
   "BTRFS": "cloud",
+  "Git": "cloud",
 
   // Automation & AI
   "n8n": "automation",
@@ -53,6 +57,7 @@ export const techCategories: Record<string, string> = {
   "Omron": "industrial",
 
   // Hardware & Fabrication
+  "Ladder Logic": "hardware",
   "AutoCAD": "hardware",
   "Hardware Fabrication": "hardware",
   "Electrical Wiring": "hardware",
@@ -67,4 +72,14 @@ export const categoryColors: Record<string, string> = {
   embedded:   "bg-amber-100 text-amber-700 dark:bg-amber-500/10 dark:text-amber-400",
   industrial: "bg-rose-100 text-rose-700 dark:bg-rose-500/10 dark:text-rose-400",
   hardware:   "bg-emerald-100 text-emerald-700 dark:bg-emerald-500/10 dark:text-emerald-400",
+};
+
+export const categoryLabels: Record<string, string> = {
+  languages:  "Languages",
+  frameworks: "Frameworks & Libraries",
+  cloud:      "Cloud & Infrastructure",
+  automation: "Automation & AI",
+  embedded:   "Embedded & Robotics",
+  industrial: "Industrial Automation",
+  hardware:   "Hardware & Fabrication",
 };
