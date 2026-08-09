@@ -29,17 +29,17 @@ export const aboutConfig = {
     items: [
       {
         period: "Oct 2025 - Present",
-        role: "Technology & Facilities Assistant",
-        company: "School of Image Arts",
+        role: "Systems Maintenance Technician",
+        company: "The Creative School",
         location: "Toronto, ON",
         highlights: [
           "Provide first-level hardware/software support and perform minor repairs for studio computing equipment",
-          "Maintain daily studio operations, ensuring equipment readiness, safety, and efficient student use",
+          "Maintain daily lab operations, ensuring equipment readiness, safety, and efficient student use",
           "Manage equipment and facility databases and perform color correction to maintain consistent studio outputs"
         ]
       },
       {
-        period: "Sept 2023 - Present",
+        period: "Sept 2023 - Aug 2025",
         role: "Research Assistant",
         company: "MIMS Labs",
         location: "Toronto, ON",
