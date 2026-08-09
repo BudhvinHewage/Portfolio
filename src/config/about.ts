@@ -73,11 +73,19 @@ export const aboutConfig = {
       },
       {
         category: "Technology & Electronics",
-        items: ["DIY Electronics", "Custom PC Assembly", "3D Printing"]
+        items: ["DIY Electronics", "Custom PC Assembly", "3D Printing", "Homelabbing"]
       },
       {
-        category: "Board Games",
-        items: ["Dungeons & Dragons (Dungeon Master)"]
+        category: "Gaming",
+        items: ["Dungeons & Dragons (Dungeon Master)", "Catan", "Avalon", "Marathon", "Supreme Commander"]
+      },
+      {
+        category: "Reading & Cooking",
+        items: ["Manga", "Fantasy Fiction", "Home Cooking"]
+      },
+      {
+        category: "Sports & Outdoors",
+        items: ["Soccer", "Pickleball", "Biking", "Walking"]
       }
     ]
   }
