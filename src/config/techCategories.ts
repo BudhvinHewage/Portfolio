@@ -37,6 +37,7 @@ export const techCategories: Record<string, string> = {
   "Arduino": "embedded",
   "FPGA": "embedded",
   "Quartus": "embedded",
+  "Vivado": "embedded",
   "HC12/HCS12": "embedded",
   "Finite State Machines": "embedded",
   "Digital Logic Design": "embedded",
