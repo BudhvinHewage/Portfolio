@@ -94,6 +94,9 @@ export const projectsConfig: ProjectsPageData = {
       imageUrl: "/assets/images/projects/cpu.png",
       gallery: [
         "/assets/images/projects/8bitcpu-verilog/basys3-topview.jpg",
+        "/assets/images/projects/8bitcpu-verilog/original_state.jpg",
+        "/assets/images/projects/8bitcpu-verilog/state_one.jpg",
+        "/assets/images/projects/8bitcpu-verilog/waveform.png",
       ],
       tags: ["Verilog", "Vivado", "FPGA", "Digital Logic Design"],
       breakdown:
